@@ -1,30 +1,21 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
-// handle multiple calls
+// local variable
 export default function Level08() {
   console.log('renderLevel08');
 
   const [count, setCount] = useState(0);
 
-  const intervalRef = useRef(null);
+  let interval = null;
 
   const start = () => {
-    if (intervalRef.current !== null) {
-      return;
-    }
-
-    intervalRef.current = setInterval(() => {
+    interval = setInterval(() => {
       setCount(c => c + 1);
     }, 500);
   };
 
   const stop = () => {
-    if (intervalRef.current === null) {
-      return;
-    }
-
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
+    clearInterval(interval);
   };
 
   return (

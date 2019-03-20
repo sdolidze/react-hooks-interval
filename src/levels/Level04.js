@@ -12,7 +12,7 @@ export default function Level04() {
       console.log('setInterval');
       setCount(count + 1);
     }, 300);
-    return clearInterval(interval);
+    return () => clearInterval(interval);
   }, []);
 
   return <div>count => {count}</div>;

@@ -3,16 +3,18 @@ import Level00 from './levels/Level00';
 import Level01 from './levels/Level01';
 import Level02 from './levels/Level02';
 import Level03 from './levels/Level03';
-import Level04 from './levels/Level05';
+import Level04 from './levels/Level04';
 import Level05 from './levels/Level05';
 import Level06 from './levels/Level06';
 import Level07 from './levels/Level07';
-import Level08 from './levels/Level07';
-import Level09 from './levels/Level08';
+import Level08 from './levels/Level08';
+import Level09 from './levels/Level09';
 import Level10 from './levels/Level10';
+import Level11 from './levels/Level11';
+import Level12 from './levels/Level12';
 
 function App() {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const levels = [
     Level00,
@@ -26,10 +28,11 @@ function App() {
     Level08,
     Level09,
     Level10,
+    Level11,
+    Level12,
   ];
 
-  const SelectedComponent =
-    selectedIndex === null ? null : levels[selectedIndex];
+  const SelectedComponent = levels[selectedIndex];
 
   return (
     <div>
@@ -40,15 +43,13 @@ function App() {
         value={selectedIndex || ''}
         onChange={e => setSelectedIndex(e.target.value)}
       >
-        <option value="" />
         {levels.map((_, i) => (
           <option key={i} value={i}>
             {i}
           </option>
         ))}
       </select>
-
-      {SelectedComponent !== null && <SelectedComponent />}
+      <SelectedComponent />
     </div>
   );
 }

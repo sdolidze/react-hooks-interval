@@ -1,10 +1,6 @@
-import React, {
-  useState,
-  useRef,
-  useCallback,
-} from 'react';
+import React, { useState, useRef } from 'react';
 
-// useCallback
+// useRef
 export default function Level09() {
   console.log('renderLevel09');
 
@@ -12,23 +8,15 @@ export default function Level09() {
 
   const intervalRef = useRef(null);
 
-  const start = useCallback(() => {
-    if (intervalRef.current !== null) {
-      return;
-    }
-
+  const start = () => {
     intervalRef.current = setInterval(() => {
       setCount(c => c + 1);
     }, 500);
-  });
+  };
 
-  const stop = useCallback(() => {
-    if (intervalRef.current === null) {
-      return;
-    }
-
+  const stop = () => {
     clearInterval(intervalRef.current);
-  });
+  };
 
   return (
     <div>

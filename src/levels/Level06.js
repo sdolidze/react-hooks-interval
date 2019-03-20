@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-// Functional updates for useState
+// setTimeout
 export default function Level06() {
   console.log('renderLevel06');
 
@@ -8,12 +8,12 @@ export default function Level06() {
 
   useEffect(() => {
     console.log('useEffect');
-    const interval = setInterval(() => {
-      console.log('setInterval');
-      setCount(c => c + 1);
+    const timeout = setTimeout(() => {
+      console.log('setTimeout');
+      setCount(count + 1);
     }, 300);
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [count]);
 
   return <div>count => {count}</div>;
 }

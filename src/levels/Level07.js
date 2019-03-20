@@ -1,28 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
-// useRef
+// Functional updates for useState
 export default function Level07() {
   console.log('renderLevel07');
 
   const [count, setCount] = useState(0);
 
-  const intervalRef = useRef(null);
-
-  const start = () => {
-    intervalRef.current = setInterval(() => {
+  useEffect(() => {
+    console.log('useEffect');
+    const interval = setInterval(() => {
+      console.log('setInterval');
       setCount(c => c + 1);
-    }, 500);
-  };
+    }, 300);
+    return () => clearInterval(interval);
+  }, []);
 
-  const stop = () => {
-    clearInterval(intervalRef.current);
-  };
-
-  return (
-    <div>
-      count => {count}
-      <button onClick={start}>start</button>
-      <button onClick={stop}>stop</button>
-    </div>
-  );
+  return <div>count => {count}</div>;
 }
