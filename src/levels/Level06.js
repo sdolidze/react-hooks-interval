@@ -7,9 +7,7 @@ export default function Level06() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log('useEffect');
     const timeout = setTimeout(() => {
-      console.log('setTimeout');
       setCount(count + 1);
     }, 300);
     return () => clearTimeout(timeout);

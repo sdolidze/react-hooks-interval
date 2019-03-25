@@ -5,8 +5,8 @@ import React, {
 } from 'react';
 
 // custom hook
-function useCounter(initalValue, ms) {
-  const [count, setCount] = useState(initalValue);
+function useCounter(initialValue, ms) {
+  const [count, setCount] = useState(initialValue);
   const intervalRef = useRef(null);
 
   const start = useCallback(() => {

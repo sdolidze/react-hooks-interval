@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-// Functional updates for useState
+// functional updates for useState
 export default function Level07() {
   console.log('renderLevel07');
 

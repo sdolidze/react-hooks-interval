@@ -7,7 +7,9 @@ export default function Level02() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => setCount(count + 1));
+    setInterval(() => {
+      setCount(count + 1);
+    }, 500);
   });
 
   return <div>Level 2: count => {count}</div>;

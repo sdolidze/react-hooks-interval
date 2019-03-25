@@ -7,9 +7,7 @@ export default function Level03() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log('useEffect');
     setInterval(() => {
-      console.log('setInterval');
       setCount(count + 1);
     }, 300);
   }, []);
