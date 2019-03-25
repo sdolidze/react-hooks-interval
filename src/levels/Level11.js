@@ -28,6 +28,7 @@ export default function Level11() {
     }
 
     clearInterval(intervalRef.current);
+    intervalRef.current = null;
   }, []);
 
   return (
